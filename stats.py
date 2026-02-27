@@ -1,20 +1,15 @@
-def get_num_words(book):
-    return len(book.split())
+def get_num_words(text):
+    return len(text.split())
 
-def char_count(book):
-    char_dict = {}
-    char_list = []
-
-    words = book.split()
-    for word in words:
-        for char in word:
-            char_list.append(char.lower())
-
-    unique_chars = set("".join(char_list))
-    for ch in unique_chars:
-        char_dict[ch] = char_list.count(ch)
-
-    return char_dict
+def char_count(text):
+    chars = {}
+    for c in text:
+        lowered = c.lower()
+        if lowered in chars:
+            chars[lowered] += 1
+        else:
+            chars[lowered] = 1
+    return chars
 
 def sort_on(items):
     return items["num"]
