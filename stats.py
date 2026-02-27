@@ -15,3 +15,15 @@ def char_count(book):
         char_dict[ch] = char_list.count(ch)
 
     return char_dict
+
+def sort_on(items):
+    return items["num"]
+
+def sorted_list_char_count(char_count):
+    list_chdict = []
+
+    for ch, num in char_count.items():
+        list_chdict.append({"char": ch, "num": num})
+    
+    list_chdict.sort(reverse=True, key=sort_on)
+    return list_chdict
